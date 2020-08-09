@@ -1,4 +1,4 @@
 ## Contents
 
-* [rename_lower](rename_lower.sh) - Converts the name of each file `NAME` (and of its contents, if it's a directory) to
-    lowercase.
+* [rename_lower](rename_lower.sh) - Converts the names of the provided files (and of their contents, in the case of
+    directories) to lowercase.
