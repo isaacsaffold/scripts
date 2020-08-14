@@ -6,10 +6,14 @@ if [ "$1" != "--help" ]; then
 		--find-command) mv -nT "$2" "${2,,}"
 		                ;;
 		*)              find "$@" -depth -name "*[[:upper:]]*" -execdir "$0" "--find-command" \
-		                '{}' ';'
+		                	'{}' ';' 2>/dev/null
+		                if [ $? != 0 ]; then
+		                	echo "$(basename $0): The operation failed." >&2
+		                	exit 1
+		                fi
 		                ;;
 	esac
-	exit
+	exit 0
 fi
 
 USAGE="Usage: $(basename "$0") [--help] NAME...
