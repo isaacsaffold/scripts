@@ -16,7 +16,7 @@ if [ "$1" != "--help" ]; then
 	exit 0
 fi
 
-USAGE="Usage: $(basename "$0") [--help] NAME...
+USAGE="Usage: $(basename "$0") [--help] [NAME...]
 
 Converts the name of each file 'NAME' (and of its contents, if it's a directory) to lowercase.
 
