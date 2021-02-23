@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /bin/bash
 
 if [ "$1" != "--help" ]; then
 	case "$1" in
@@ -20,6 +20,6 @@ USAGE="Usage: $(basename "$0") [--help] [NAME...]
 
 Converts the name of each file 'NAME' (and of its contents, if it's a directory) to lowercase.
 
-	--help	display this help and exit"
+	--help Display this help and exit."
 
 echo "$USAGE"

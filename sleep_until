@@ -1,0 +1,22 @@
+#! /bin/sh
+
+USAGE="Usage: $(basename "$0") [-h|--help] [DATE_STRING]
+
+Sleeps until the time 'DATE_STRING', where 'DATE_STRING' is in the format expected by 'date -d'.
+
+	-h|--help Display this help and exit."
+
+case "$1" in
+	'')
+		echo "No argument provided." >&2
+		exit 1
+		;;
+	-h|--help)
+		echo "$USAGE"
+		exit 0
+		;;
+esac
+
+then=$(date -d "$1" +'%s')
+now=$(date +'%s')
+sleep $((then - now))
